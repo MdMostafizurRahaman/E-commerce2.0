@@ -1,0 +1,60 @@
+"Run command"
+node .\index
+
+go to any browser and type 
+http://localhost:4000
+
+
+npm init
+npm install express
+npm install jsonwebtoken
+npm install mongoose
+npm install multer
+npm install cors
+
+
+
+index.js import first
+const port = 4000;
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const multer =  require("multer");
+const path = require("path");
+const cors = require("cors");
+
+
+
+
+
+const port = 4000;
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const multer =  require("multer");
+const path = require("path");
+const cors = require("cors");
+
+app.use(express.json());
+app.use(cors());
+
+// Database connection with MongoDB
+mongoose.connect("mongodb+srv://rakib:iit12345@cluster0.9g5zreb.mongodb.net/Ecommerce")
+
+//API creation
+
+app.get("/",(req, res)=>{
+    res.send("Express App is running")
+})
+
+
+app.listen(port,(error)=>{
+    if(!error){
+        console.log("Server is running on PORT: "+port);
+    }
+    else{
+        console.log("Error :"+error);
+    }
+})
